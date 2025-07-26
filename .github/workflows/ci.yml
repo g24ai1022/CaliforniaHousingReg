@@ -33,6 +33,6 @@ jobs:
 
     - name: DockerHub Login & Push
       run: |
-        echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        docker tag housing-model yourusername/housing-model
-        docker push yourusername/housing-model
+        echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.g24ai1022}}" --password-stdin
+        docker tag housing-model g24ai1022/housing-model
+        docker push g24ai1022/housing-model
