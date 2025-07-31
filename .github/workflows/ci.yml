@@ -21,6 +21,11 @@ jobs:
       run: |
           git fetch origin dev
           git checkout origin/dev -- train.py
+    - name: Fetch quantize.py from quantization branch
+      run: |
+          git fetch origin dev
+          git checkout origin/dev -- quantize.py
+          
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
@@ -33,6 +38,9 @@ jobs:
     - name: Train model
       run: |
         python train.py
+    - name: Run Quantization
+      run: |
+        python quantize.py
 
     - name: Build Docker Image
       run: |
