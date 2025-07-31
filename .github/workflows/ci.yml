@@ -9,6 +9,14 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+
+    - name: Checkout docker_ci branch
+      uses: actions/checkout@v3
+      with:
+          ref: docker_ci
+
+    - name: List files before Docker build
+      run: ls -la
     - name: Fetch train.py from dev branch
       run: |
           git fetch origin dev
