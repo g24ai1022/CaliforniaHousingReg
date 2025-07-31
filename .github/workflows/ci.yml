@@ -23,8 +23,8 @@ jobs:
           git checkout origin/dev -- train.py
     - name: Fetch quantize.py from quantization branch
       run: |
-          git fetch origin dev
-          git checkout origin/dev -- quantize.py
+          git fetch origin quantization
+          git checkout origin/quantization -- quantize.py
           
     - name: Set up Python
       uses: actions/setup-python@v4
