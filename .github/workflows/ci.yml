@@ -9,7 +9,10 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-
+    - name: Fetch train.py from dev branch
+      run: |
+          git fetch origin dev
+          git checkout origin/dev -- train.py
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
