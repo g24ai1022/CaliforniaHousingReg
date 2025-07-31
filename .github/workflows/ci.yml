@@ -42,8 +42,3 @@ jobs:
       run: |
         docker run housing-model
 
-    - name: DockerHub Login & Push
-      run: |
-        echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.g24ai1022}}" --password-stdin
-        docker tag housing-model g24ai1022/housing-model
-        docker push g24ai1022/housing-model
